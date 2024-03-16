@@ -1,0 +1,72 @@
+appdirs==1.4.4
+asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
+attrs @ file:///C:/b/abs_35n0jusce8/croot/attrs_1695717880170/work
+Automat @ file:///tmp/build/80754af9/automat_1600298431173/work
+bcrypt @ file:///C:/ci_311/bcrypt_1676435170049/work
+Brotli @ file:///C:/ci_311/brotli-split_1676435766766/work
+certifi @ file:///C:/b/abs_35d7n66oz9/croot/certifi_1707229248467/work/certifi
+cffi @ file:///C:/b/abs_924gv1kxzj/croot/cffi_1700254355075/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+colorama @ file:///C:/ci_311/colorama_1676422310965/work
+constantly @ file:///C:/b/abs_cbuavw4443/croot/constantly_1703165617403/work
+cryptography @ file:///C:/b/abs_531eqmhgsd/croot/cryptography_1707523768330/work
+cssselect @ file:///C:/b/abs_71gnjab7b0/croot/cssselect_1707339955530/work
+decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
+executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
+filelock @ file:///C:/b/abs_f2gie28u58/croot/filelock_1700591233643/work
+h11==0.14.0
+hyperlink @ file:///tmp/build/80754af9/hyperlink_1610130746837/work
+idna @ file:///C:/ci_311/idna_1676424932545/work
+incremental @ file:///croot/incremental_1708639938299/work
+ipython @ file:///C:/b/abs_b6pfgmrqnd/croot/ipython_1704833422163/work
+itemadapter @ file:///tmp/build/80754af9/itemadapter_1626442940632/work
+itemloaders @ file:///C:/b/abs_5e3azgv25z/croot/itemloaders_1708639993442/work
+jedi @ file:///C:/ci_311/jedi_1679427407646/work
+jmespath @ file:///C:/b/abs_59jpuaows7/croot/jmespath_1700144635019/work
+lxml @ file:///C:/b/abs_9e7tpg2vv9/croot/lxml_1695058219431/work
+matplotlib-inline @ file:///C:/ci_311/matplotlib-inline_1676425798036/work
+numpy==1.26.4
+outcome==1.3.0.post0
+packaging @ file:///C:/b/abs_28t5mcoltc/croot/packaging_1693575224052/work
+pandas==2.2.1
+parsel @ file:///C:/b/abs_ebc3tzm_c4/croot/parsel_1707503517596/work
+parso @ file:///opt/conda/conda-bld/parso_1641458642106/work
+prompt-toolkit @ file:///C:/b/abs_68uwr58ed1/croot/prompt-toolkit_1704404394082/work
+Protego @ file:///tmp/build/80754af9/protego_1598657180827/work
+pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
+pyasn1 @ file:///Users/ktietz/demo/mc3/conda-bld/pyasn1_1629708007385/work
+pyasn1-modules==0.2.8
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+PyDispatcher==2.0.5
+Pygments @ file:///C:/b/abs_fay9dpq4n_/croot/pygments_1684279990574/work
+pyOpenSSL @ file:///C:/b/abs_baj0aupznq/croot/pyopenssl_1708380486701/work
+PySocks @ file:///C:/ci_311/pysocks_1676425991111/work
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
+pytz==2024.1
+pywin32==305.1
+queuelib @ file:///C:/b/abs_563lpxcne9/croot/queuelib_1696951148213/work
+requests @ file:///C:/b/abs_474vaa3x9e/croot/requests_1707355619957/work
+requests-file @ file:///Users/ktietz/demo/mc3/conda-bld/requests-file_1629455781986/work
+Scrapy @ file:///C:/ci_311/scrapy_1678502587780/work
+selenium==4.18.1
+service-identity @ file:///Users/ktietz/demo/mc3/conda-bld/service_identity_1629460757137/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+sniffio==1.3.1
+sortedcontainers==2.4.0
+stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
+tldextract @ file:///opt/conda/conda-bld/tldextract_1646638314385/work
+traitlets @ file:///C:/ci_311/traitlets_1676423290727/work
+trio==0.24.0
+trio-websocket==0.11.1
+Twisted @ file:///C:/b/abs_e7yqd811in/croot/twisted_1708702883769/work
+twisted-iocpsupport @ file:///C:/ci_311/twisted-iocpsupport_1676447612160/work
+typing_extensions @ file:///C:/b/abs_72cdotwc_6/croot/typing_extensions_1705599364138/work
+tzdata==2024.1
+urllib3 @ file:///C:/b/abs_4etpfrkumr/croot/urllib3_1707770616184/work
+w3lib @ file:///C:/b/abs_957begrwnl/croot/w3lib_1708640020760/work
+wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
+webdriver-manager==4.0.1
+win-inet-pton @ file:///C:/ci_311/win_inet_pton_1676425458225/work
+wsproto==1.2.0
+zope.interface @ file:///C:/ci_311/zope.interface_1676439868776/work
