@@ -1,13 +1,15 @@
 from selenium import webdriver
 
-# Create a WebDriver instance for Chrome
-driver = webdriver.Chrome()
+from selenium.webdriver.chrome.service import Service
 
-# Example: Open a webpage
-driver.get("https://www.example.com")
+chromedriver = "/chromedriver"
 
-# Example: Print the title of the webpage
-print(driver.title)
+option = webdriver.ChromeOptions()
 
-# Example: Close the browser
-driver.quit()
+option.binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
+
+s = Service(chromedriver)
+
+driver = webdriver.Chrome(service=s, options=option)
+
+driver.get("https://google.com")

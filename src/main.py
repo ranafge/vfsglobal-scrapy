@@ -22,17 +22,20 @@ class vsfglobals:
         self.answer = []
     def start_driver(self):
         options = Options()
-        self.driver = webdriver.Chrome()
+        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
+        options.add_argument(f'user-agent={user_agent}')
+        self.driver = webdriver.Brave()
         self.driver.get('https://visa.vfsglobal.com/bgd/en/ita/dashboard')
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(30)
         self.driver.maximize_window()
+        
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="onetrust-accept-btn-handler"]'))).click()
         # Wait to load the website 
-        print("Waiting for 10 seconds...")
        
         # WebDriverWait(self.driver, 50).until(EC.presence_of_element_located((By.ID, "success-text")))
         # print(" Human varification checking success")
         # WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID,'//*[@id="onetrust-accept-btn-handler"]'))).click()
-        # print("Clicked accept cookies")    
+        print("Clicked accept cookies")    
         # self.driver.refresh_session()
         
        
@@ -48,7 +51,7 @@ class vsfglobals:
         self.credentials['email'] = email
         self.credentials['password'] = password
     def login(self):
-        self.open_url('https://visa.vfsglobal.com/bgd/en/ita/application-detail')
+        # self.open_url('https://visa.vfsglobal.com/bgd/en/ita/application-detail')
         # self.open_url('https://visa.vfsglobal.com/bgd/en/ita/login')
         self.driver.implicitly_wait(10)
         # Wait to load the website 
@@ -59,7 +62,7 @@ class vsfglobals:
         # WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID,'//*[@id="onetrust-accept-btn-handler"]'))).click()
         # print("Clicked accept cookies")    
         # self.driver.refresh_session()
-        WebDriverWait(self.driver,10).until(EC.element_to_be_clickable((By.ID,"onetrust-accept-btn-handler"))).click()
+        #WebDriverWait(self.driver,10).until(EC.element_to_be_clickable((By.ID,"onetrust-accept-btn-handler"))).click()
         if self.credentials["email"] and self.credentials["password"]:
             # accept all cookies tab -click action
             
@@ -75,13 +78,12 @@ class vsfglobals:
             element = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "span.mat-button-wrapper")))
             element.click()
             
-
             self.driver.refresh()
 
 if __name__ == "__main__":
     scrapy = vsfglobals()
     scrapy.start_driver()
-    time.sleep(100)
+    time.sleep(10)
     # scrapy.set_credentials("ranafge@gmail.com", "Pass1478@")
     scrapy.login()
     scrapy.stop_driver()
