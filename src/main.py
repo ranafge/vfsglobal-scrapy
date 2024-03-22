@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import time
-
+import csv
 class vsfglobals:
     def __init__(self):
         self.driver = ""
@@ -22,22 +22,38 @@ class vsfglobals:
         self.answer = []
     def start_driver(self):
         options = Options()
-        user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
-        options.add_argument(f'user-agent={user_agent}')
-        self.driver = webdriver.Brave()
-        self.driver.get('https://visa.vfsglobal.com/bgd/en/ita/dashboard')
-        self.driver.implicitly_wait(30)
-        self.driver.maximize_window()
+        proxies = []
+        with open(r'/home/rana/Documents/python_scrapy/vfsglobal-scrapy/src/Free_Proxy_List.csv', 'r') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                proxies.append(row)
+        for proxy in proxies:
+            # Add proxy settings to Chrome options
+            proxy_host = proxy['Proxy_IP']
+            proxy_port = proxy['Proxy_Port']
+            proxy_arg = f'{proxy_host}:{proxy_port}'
+            options.add_argument(f'--proxy-server={proxy_arg}')
         
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="onetrust-accept-btn-handler"]'))).click()
-        # Wait to load the website 
-       
-        # WebDriverWait(self.driver, 50).until(EC.presence_of_element_located((By.ID, "success-text")))
-        # print(" Human varification checking success")
-        # WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID,'//*[@id="onetrust-accept-btn-handler"]'))).click()
-        print("Clicked accept cookies")    
-        # self.driver.refresh_session()
+        # user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36"
+        # options.add_argument(f'user-agent={user_agent}')
+        # options.add_argument(f'--proxy-server={proxy_host}:{proxy_port}')
+        try:
+            self.driver = webdriver.Chrome()
+            self.driver.get('https://visa.vfsglobal.com/bgd/en/ita/dashboard')
+            self.driver.implicitly_wait(40)
+            self.driver.maximize_window()
+            
+            WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH,'//*[@id="onetrust-accept-btn-handler"]'))).click()
+            # Wait to load the website 
         
+            # WebDriverWait(self.driver, 50).until(EC.presence_of_element_located((By.ID, "success-text")))
+            # print(" Human varification checking success")
+            # WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.ID,'//*[@id="onetrust-accept-btn-handler"]'))).click()
+            print("Clicked accept cookies")    
+            # self.driver.refresh_session()
+        finally:
+            self.driver.quit()
+            
        
       
     def stop_driver(self):
